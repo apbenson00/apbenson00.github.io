@@ -3,52 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andy Benson - Personal Site</title>
+    <title>Andrew "Andy" P. Benson | Ph.D. Researcher</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1e40af;
         }
-        h1, h2 { color: #111; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .section { margin-bottom: 40px; }
-        ul { padding-left: 20px; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .links a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .links span.sep {
+            color: var(--border-color);
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .card .date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .card-sub {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        ul.bullet-list {
+            padding-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        ul.bullet-list li {
+            margin-bottom: 8px;
+        }
+
+        ul.bullet-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .tag-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .tag {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 9999px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
 
-    <header class="section">
-        <h1>Your Name</h1>
-        <p>Ph.D. Student / Researcher / Developer</p>
-        <p>
-            <a href="mailto:bensap24@vt.edu">Email</a> | 
-            <a href="https://github.com/apbenson00">GitHub</a> | 
-            <a href="https://www.linkedin.com/in/andy-b-0407a5144/">LinkedIn</a>
-        </p>
-    </header>
+    <div class="container">
+        
+        <header>
+            <h1>Andrew "Andy" P. Benson</h1>
+            <div class="subtitle">Ph.D. Student &bull; Graduate Research Assistant &bull; FoRTE Lab</div>
+            <div class="links">
+                <a href="mailto:andrewpatrick@cox.net">Email</a>
+                <span class="sep">&bull;</span>
+                <a href="https://apbenson00.github.io" target="_blank" rel="noopener">Website</a>
+                <span class="sep">&bull;</span>
+                <a href="https://github.com/apbenson00" target="_blank" rel="noopener">GitHub</a>
+                <span class="sep">&bull;</span>
+                <a href="https://www.linkedin.com/in/andy-b-0407a5144/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </header>
 
-    <div class="section">
-        <h2>About & Interests</h2>
-        <p>Hello! My name is Andy, and I am a PhD student at Virginia Tech in Department of Computer Science. Before graduate school, I worked for a BDC / Private Credit firm where I worked on deal teams to complete private equity buyouts. At Virginia Tech, I now work on software testing and security through fuzzing. I hope to find future roles to combine my loves of computer science and financial thinking. </p>
-    </div>
+        <section class="section">
+            <h2>About & Interests</h2>
+            <p>
+                Hello! I am a Ph.D. student in Computer Science at <strong>Virginia Tech</strong> and a Graduate Research Assistant in the <strong>FoRTE Research Lab</strong>, advised by Dr. Matthew Hicks. Prior to starting graduate school, I worked as a Financial Analyst for a BDC / private credit firm, underwriting Private Equity buyouts across technology, healthcare, and industrial sectors.
+            </p>
+            <p>
+                My research focuses on software security and automated testing through <strong>fuzzing</strong>—specifically scalable distributed architectures, crash minimization, and automated patch validation. I am always interested in computational security methods and looking for ways to bridge software security with financial analytical thinking.
+            </p>
+        </section>
 
-    <div class="section">
-        <h2>Research/h2>
-        <ul>
-            <li><strong>My research primarily focuses on large-scale automated testing through fuzzing. I have built distributed infrastructure, improve crash triaging, and applied stochastic methods to better verify patches. </li>
-        </ul>
-    </div>
+        <section class="section">
+            <h2>Education</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Virginia Polytechnic Institute and State University</h3>
+                        <span class="date">Aug 2024 &ndash; Present</span>
+                    </div>
+                    <div class="card-sub">Ph.D. in Computer Science</div>
+                    <p>Graduate Research Assistant in the FoRTE Research Lab. Focus on large-scale fuzzing architectures, crash minimization, automated patch validation, and hardware fuzzing.</p>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Wake Forest University</h3>
+                        <span class="date">Aug 2019 &ndash; May 2023</span>
+                    </div>
+                    <div class="card-sub">B.S. in Computer Science &bull; B.S. in Finance &bull; Minor in Mathematics</div>
+                    <p>GPA: 3.98. Recipient of the Harold Wayland & Nelle Futch Tribble Merit Scholarship and the Jean & Jack Bishop Scholarship for Eagle Scouts.</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="section">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong><a href="#">Distributed Fuzzing Infrastructure</a></strong> This project is a Python based network stack to better communicate between fuzzing sessions on both remote devices and the same machine. Current efforts are underway to rework the codebase into Golang.</li>
-        </ul>
+        <section class="section">
+            <h2>Research & Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Distributed Fuzzing Architecture</h3>
+                        <span class="date">FoRTE Lab</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Go</span>
+                        <span class="tag">Distributed Systems</span>
+                        <span class="tag">Coverage Analysis</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Automated Crash Minimization & Patch Verification</h3>
+                        <span class="date">FoRTE Lab</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Fuzzing</span>
+                        <span class="tag">Crash Triaging</span>
+                        <span class="tag">AFL++</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Large-Scale Container Comparisons for Fuzzing</h3>
+                        <span class="date">FoRTE Lab</span>
+                        <span class="tag">Vagrant</span>
+                        <span class="tag">Systemd</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">TMUX</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>FIDUS Capital</h3>
+                        <span class="date">Aug 2023 &ndash; Aug 2024</span>
+                    </div>
+                    <div class="card-sub">Financial Analyst &bull; Charlotte, NC</div>
+                    <ul class="bullet-list">
+                        <li>Monitored a portfolio of 17 companies, evaluating monthly financials, earnouts, acquisitions, and restructurings.</li>
+                        <li>Participated in deal underwriting, financial modeling, and investment committee presentations for transactions up to $30M.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Truist Financial Corporation</h3>
+                        <span class="date">Jun 2022 &ndash; Aug 2022</span>
+                    </div>
+                    <div class="card-sub">Commercial Real Estate Summer Analyst &bull; Atlanta, GA</div>
+                    <ul class="bullet-list">
+                        <li>Evaluated Income Property Loan reports and assisted with CCAR data inputs for economic stress testing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills & Honors</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="tag-container" style="margin-top:0;">
+                        <span class="tag">C</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Golang</span>
+                        <span class="tag">R</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Bash / Linux</span>
+                        <span class="tag">Make / CMake</span>
+                        <span class="tag">AFL++</span>
+                        <span class="tag">Sanitizers</span>
+                        <span class="tag">Verilator</span>
+                        <span class="tag">Verilog</span>
+                    </div>
+                    <div style="margin-top: 16px; font-size: 0.95rem; color: var(--text-secondary);">
+                        <strong>Honors & Societies:</strong> Phi Beta Kappa, Upsilon Pi Epsilon, Beta Gamma Sigma
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; Andrew P. Benson &bull; Virginia Tech Department of Computer Science</p>
+        </footer>
+
     </div>
 
 </body>
